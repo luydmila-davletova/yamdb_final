@@ -44,7 +44,8 @@ build_and_push_to_docker_hub:
         with:
           push: true
           tags: davletova1/yambd
-  deploy:
+          
+deploy:
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
     steps:
@@ -66,8 +67,8 @@ build_and_push_to_docker_hub:
             echo DB_HOST=${{ secrets.DB_HOST }} >> .env
             echo DB_PORT=${{ secrets.DB_PORT }} >> .env
             sudo docker-compose up -d
-
-  send_message:
+            
+send_message:
     runs-on: ubuntu-latest
     needs: deploy
     steps:
