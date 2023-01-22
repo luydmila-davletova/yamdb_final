@@ -9,7 +9,7 @@ services:
       - ./.env
 
   web:
-    image: davletova1/yambd:latest
+    image: davletova1/api:latest
     build:
       context: ../
       dockerfile: api_yamdb/Dockerfile
