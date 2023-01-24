@@ -3,6 +3,7 @@ FROM python:3.7-slim
 WORKDIR /app
 
 COPY api_yamdb/requirements.txt /app
+# без указания полного пути все ломается и контейнеры не хотят запускаться
 
 RUN apt-get update && apt-get -y install libpq-dev gcc
 
